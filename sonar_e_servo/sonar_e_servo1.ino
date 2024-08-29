@@ -6,7 +6,6 @@ https://www.tinkercad.com/things/aBm3HaNyCaY-sonar-e-servo?sharecode=f2m7PCVqPZJ
 
 int trig = 4; // Define o pino trig do sensor ultrassônico
 int echo = 5; // Define o pino echo do sensor ultrassônico
-int servoPin = 9; // Pino do servo
 Servo meuServo; // Crie um objeto Servo
 
 float distancia; // Variável para armazenar a distância medida pelo sensor ultrassônico
@@ -15,7 +14,6 @@ void setup()
 {
   pinMode(trig, OUTPUT); // Configura o pino trig como saída
   pinMode(echo, INPUT); // Configura o pino echo como entrada
-  //pinMode(servoPin, OUTPUT); // Define o pino do LED como saída
   Serial.begin(9600); // Inicializa a comunicação serial com taxa de transmissão de 9600 bps
   meuServo.attach(9); // Anexe o servo ao pino 9
 }
@@ -34,11 +32,9 @@ void loop()
   Serial.println(distancia); // Imprima a distância medida no monitor serial
 
   // Verifica se a distância é menor ou igual a 20cm
-  if(distancia <= 70) {
-   // digitalWrite(servoPin, HIGH); // Acende o LED
+  if(distancia <= 20) {
     meuServo.write(90); // Gira o servo para 90 graus
   } else {
-    //digitalWrite(servoPin, LOW); // Apaga o LED
     meuServo.write(0); // Gira o servo para 0 graus
   }
 }
