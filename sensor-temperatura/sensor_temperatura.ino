@@ -46,9 +46,14 @@ void loop()
       	digitalWrite(LEDblue, LOW); 
       	digitalWrite(VENTILADOR, HIGH);
     }
-    else {
+    else if(celsius <= 10) {
       	digitalWrite(LEDred, LOW); 
       	digitalWrite(LEDblue, HIGH);
+      	digitalWrite(VENTILADOR, LOW);
+    }
+    else {
+      	digitalWrite(LEDred, LOW); 
+      	digitalWrite(LEDblue, LOW);
       	digitalWrite(VENTILADOR, LOW);
     }
     
