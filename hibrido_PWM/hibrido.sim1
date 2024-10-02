@@ -1,0 +1,43 @@
+<circuit version="1.1.0-SR0" rev="1917" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="1" >
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-102" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="-304,-184" rotation="1080" hflip="1" vflip="1" label="Fixed Voltage-102" idLabPos="-64,-24" labelrot="0" valLabPos="-5.3153,9.42778" valLabRot="360" Voltage="5 V" Out="true" />
+
+<item itemtype="Switch" CircId="Switch-103" mainComp="false" Show_id="true" Show_Val="false" Pos="-236,-144" rotation="0" hflip="1" vflip="1" label="3" idLabPos="-15.5205,-17.2866" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" DT="false" Poles="1" />
+
+<item itemtype="Switch" CircId="Switch-104" mainComp="false" Show_id="true" Show_Val="false" Pos="-236,-224" rotation="0" hflip="1" vflip="1" label="1" idLabPos="-16,-16.8071" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" DT="false" Poles="1" />
+
+<item itemtype="Switch" CircId="Switch-105" mainComp="false" Show_id="true" Show_Val="false" Pos="-236,-184" rotation="0" hflip="1" vflip="1" label="2" idLabPos="-15.0409,-16.8071" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" DT="false" Poles="1" />
+
+<item itemtype="Subcircuit" CircId="Uno-114" mainComp="false" Show_id="true" Show_Val="false" Pos="-172,-224" rotation="0" hflip="1" vflip="1" label="Uno-114" idLabPos="1.91811,-17.6024" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps MainCompId="mega328-109" Frequency="16 MHz" Program="build/arduino.avr.uno/hibrido.ino.hex" Auto_Load="false" saveEepr="true" SerialMon="1" />
+</item>
+
+<item itemtype="DcMotor" CircId="DcMotor-116" mainComp="false" Show_id="true" Show_Val="false" Pos="-260,-76" rotation="180" hflip="1" vflip="1" label="Motor" idLabPos="11.8396,-33.0567" labelrot="180" valLabPos="-14,36" valLabRot="0" RPM_Nominal="90 _RPM" Volt_Nominal="5 V" Resistance="100 Ω" />
+
+<item itemtype="Ground" CircId="Ground-117" mainComp="false" Show_id="false" Show_Val="false" Pos="-324,-32" rotation="0" hflip="1" vflip="1" label="Ground-117" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Node" CircId="Node-109" mainComp="false" Pos="-268,-184" />
+
+<item itemtype="Node" CircId="Node-110" mainComp="false" Pos="-268,-184" />
+
+<item itemtype="Connector" uid="Connector-241" startpinid="Switch-104-pinP0" endpinid="Node-109-1" pointList="-252,-224,-268,-224,-268,-184" />
+
+<item itemtype="Connector" uid="Connector-243" startpinid="Node-109-2" endpinid="Switch-105-pinP0" pointList="-268,-184,-252,-184" />
+
+<item itemtype="Connector" uid="Connector-244" startpinid="Switch-103-pinP0" endpinid="Node-110-1" pointList="-252,-144,-268,-144,-268,-184" />
+
+<item itemtype="Connector" uid="Connector-245" startpinid="Fixed Voltage-102-outnod" endpinid="Node-110-0" pointList="-288,-184,-268,-184" />
+
+<item itemtype="Connector" uid="Connector-246" startpinid="Node-110-2" endpinid="Node-109-0" pointList="-268,-184,-268,-184" />
+
+<item itemtype="Connector" uid="Connector-250" startpinid="Switch-104-switch0pinN" endpinid="Uno-114-2" pointList="-220,-224,-192,-224,-192,-192,-164,-192" />
+
+<item itemtype="Connector" uid="Connector-251" startpinid="Switch-105-switch0pinN" endpinid="Uno-114-3" pointList="-220,-184,-164,-184" />
+
+<item itemtype="Connector" uid="Connector-253" startpinid="Switch-103-switch0pinN" endpinid="Uno-114-4" pointList="-220,-144,-192,-144,-192,-176,-164,-176" />
+
+<item itemtype="Connector" uid="Connector-255" startpinid="DcMotor-116-rPin" endpinid="Ground-117-Gnd" pointList="-300,-76,-324,-76,-324,-48" />
+
+<item itemtype="Connector" uid="Connector-257" startpinid="DcMotor-116-lPin" endpinid="Uno-114-6" pointList="-220,-76,-184,-76,-184,-160,-164,-160" />
+
+</circuit>
